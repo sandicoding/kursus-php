@@ -16,9 +16,7 @@
 		$hargaxy = $dataxy['harga'];
 		$hargafxy = number_format($hargaxy, 0, ',', '.');
 
-		$sqlyx = $pdo->query("SELECT * FROM stokkursus WHERE tipe='$type'");
-		$datayx = $sqlyx->fetch();
-		$stokyx = $datayx['stok'];
+		
 	}
 		
 		date_default_timezone_set("Asia/Makassar");
@@ -41,9 +39,7 @@ if(isset($_POST['klik'])) {
 		$harga = $datax['harga'];
 		$hargaf = number_format($harga, 0, ',', '.');
 
-		$sqly = $pdo->query("SELECT * FROM stokkursus WHERE idkursus='$ambilx'");
-		$datay = $sqly->fetch();
-		$stok = $datay['stok'];
+		
 }
 ?>
 		<div id="imglog">
@@ -136,10 +132,7 @@ if(isset($_POST['klik'])) {
 				<td>No. Telepon</td>
 				<td><input type="text" name="telepon" value="<?php echo $telepon ?>"></td>
 			</tr>
-			<tr>
-				<td>date</td>
-				<td><input type="date" name="date"></td>
-			</tr>
+		
 			<tr>
 				<td></td>
 				<td><button type="submit" style="width:100px;background:#3279b8; color:white;font-weight:bold;padding:5px;border:2px solid #B40301; cursor: pointer; ">Daftar</button></td>

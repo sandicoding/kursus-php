@@ -20,11 +20,7 @@ $telepon = $_POST['telepon'];
 $created_date = date('Y-m-d H:i:s');
 $sqlsimpan = $pdo->query("INSERT INTO pemesanan VALUES(null, '$idkursus', '$tipe', '$bidang', '$harga', '$idtamu', '$nama', '$alamat', '$telepon', 'Pending...','$created_date')");
 
-$sqlstok = $pdo->query("SELECT * FROM stokkursus WHERE idkursus=$idkursus");
-	$datax = $sqlstok->fetch();
-	$stok = $datax['stok'];
-	$hitung = $stok;
-	$sqlupdate = $pdo->query("UPDATE stokkursus SET stok='$hitung' WHERE idkursus='$idkursus'");
+
 
 echo"<script>swal({
 	  	type: 'success',

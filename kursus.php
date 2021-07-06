@@ -34,9 +34,7 @@
 
                 $angka = number_format($harga,0,",",".");
 
-                $sqly = $pdo->query("SELECT * FROM stokkursus WHERE idkursus=$id");
-                while($datay = $sqly->fetch()) {
-                    $stok = $datay['stok'];
+                
         ?>
         
             <div class="kamar">
@@ -67,7 +65,7 @@
                 </form>
             </div>
             <?php
-                    }
+                    
                 }
             ?>
     </div>

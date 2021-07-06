@@ -28,10 +28,11 @@ $pdf->Cell(35,6,'TELEPON',1,0);
  
 $pdf->SetFont('Arial','',10);
 
-
+$bln = $_GET['bln'];
+$thn = $_GET['thn'];
  
 include 'fungsi/koneksi.php';
-$bayar = $pdo->query("SELECT * From pemesanan WHERE status='Berhasil'");
+$bayar = $pdo->query("SELECT * FROM pemesanan WHERE month(created_at) = '$bln' AND year(created_at) = '$thn' AND status='Berhasil' ORDER BY idpesan DESC");
 while ($row = $bayar->fetch()){
 	$pdf->Cell(10,7,'',0,1);
     $pdf->Cell(15,6,$row['idpesan'],1,0);
